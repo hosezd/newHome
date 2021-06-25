@@ -30,22 +30,20 @@ for (let i=0;i<a.length-1;i+=2){
         mod.push(c[i]);
     }
     
-    else 
-     (c[i]>30)
-        hot.push(c[i+1]);
-        hot.push(c[i]);
+    else {
       
     }
 
     console.log("Cold");
     for (let i=0;i<=cold.length-1;i+=2){
-        console.log(cold[i]);
+        console.log(cold[i]+cold[i+1]+"\n");
     }
     console.log("Moderate");
     for (let i=0;i<=mod.length-1;i+=2){
-        console.log(cold[i]);
+        console.log(cold[i]+mod[i+1]+"\n");
     }
     console.log("Hot");
     for (let i=0;i<=hot.length-1;i+=2){
-        console.log(cold[i]);
+        console.log(cold[i]+hot[i+1]+"\n");
     }
+}
