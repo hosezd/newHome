@@ -7,43 +7,50 @@ var mod = new Array();
 var hot = new Array();
 var j=0;
 for (let i=0;i<=y.length;i+=2){
-    a.push(c[i]);
-    b.push(c[i+1]);
+    a.push(y[i]);
+    b.push(y[i+1]);
 }
 
 function used(y){
     return ((y-32)*(5/9));
 }
 
-for (let i=0;i<y.length-1;i++){
-    c.push(used(a[i]))
-    c.push(b[i])
-}
-
-for (let i=0;i<a.length-1;i+=2){
-    if(c[i]<=20){
-        cold.push(c[i+1]);
-        cold.push(c[i]);
+for (let i=0;i<a.length-1;i++){
+    c.push(used(b[i]))
+    c.push(a[i])
     }
-    else if(a[i]<=30){
-        mod.push(c[i+1]);
-        mod.push(c[i]);
+
+    for (let i=0;i<c.length-1;i+=2){
+        if(c[i]<=20){
+            cold.push(c[i+1])
+            cold.push(c[i])
+        }
+        else if(c[i]<=30){
+            mod.push(c[i+1])
+            mod.push(c[i])
+        }
+        else if(a[i]>30){
+            hot.push(c[i+1])
+            hot.push(c[i])
+        }
+        else {
+          
+        }
     }
     
-    else {
-      
-    }
 
-    console.log("Cold");
-    for (let i=0;i<=cold.length-1;i+=2){
-        console.log(cold[i]+cold[i+1]+"\n");
-    }
-    console.log("Moderate");
-    for (let i=0;i<=mod.length-1;i+=2){
-        console.log(cold[i]+mod[i+1]+"\n");
-    }
-    console.log("Hot");
-    for (let i=0;i<=hot.length-1;i+=2){
-        console.log(cold[i]+hot[i+1]+"\n");
-    }
+console.log("Cold\n");
+for (let i=0;i<=cold.length-1;i+=2){
+    console.log(cold[i]+" "+cold[i+1]+"\n")
+
 }
+console.log("Moderate\n")
+for (let i=0;i<=mod.length-1;i+=2){
+    console.log(mod[i]+" "+mod[i+1]+"\n")
+
+}
+console.log("Hot\n")
+for (let i=0;i<=hot.length-1;i+=2){
+    console.log(hot[i]+" "+hot[i+1]+"\n")
+}
+
